@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  	<meta name="viewport" content="width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no, user-scalable=0"/>
+    <link rel="stylesheet" href="graph-creator.css" />
+    <link href="node_modules/jsoneditor/dist/jsoneditor.min.css" rel="stylesheet" type="text/css">
+	<script src="node_modules/jsoneditor/dist/jsoneditor.min.js"></script>
+  </head>
+
+  <body>
+	<div id="jsoneditor" style="width: 25%; float: right;"></div>
+    <div id="graph" style="width: 75%; float: left;">
+    <div id="toolbox">
+      <input type="image" id="delete-graph" title="new graph" src="static/document79.png" alt="new graph"> 
+      <input type="file" id="hidden-file-upload"><input id="upload-input" type="image" title="upload graph" src="static/open127.png" alt="upload graph"> 
+      <input type="image" id="download-input" title="download graph" src="static/floppy15.png" alt="download graph">
+      <input type="image" id="download-format" title="download 'special' graph" src="static/floppy15.png" alt="download 'special' graph"> 
+      <input type="image" id="add-node" title="add generic node" src="static/plus32.png" alt="add generic node">
+      <input type="image" id="add-startnode" title="add start node" src="static/triangular30.png" alt="add start node">
+      <input type="image" id="add-substartnode" title="add substart node" src="static/yield.png" alt="add substart node">
+      <input type="image" id="add-blocknode" title="add block node" src="static/stop24.png" alt="add block node">
+      <input type="image" id="add-stacknode" title="add stack node" src="static/data-1.png" alt="add stack node">
+      <input type="image" id="duplicate-node" title="duplicate node" src="static/square9.png" alt="duplicate node">
+      <input type="image" id="add-edge" title="add connection" src="static/arrow503.png" alt="add connection">
+      <input type="image" id="add-weakedge" title="add weak connection" src="static/arrow500.png" alt="add weak connection">
+      <input type="image" id="delete" title="delete selected" src="static/delete30.png" alt="delete selected">
+    </div>
+    </div>
+    
+    
+
+    <script src="//d3js.org/d3.v3.js" charset="utf-8"></script>
+    <script src="//cdn.jsdelivr.net/filesaver.js/0.1/FileSaver.min.js"></script>
+    <script src="graph-creator.js"></script>
+    <script>
+    	var container = document.getElementById("jsoneditor");
+		var options = {
+   			mode: 'tree'
+		};
+		var editor = new JSONEditor(container, options);
+	</script>
+  </body>
+
+</html>
